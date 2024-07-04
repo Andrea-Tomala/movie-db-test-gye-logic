@@ -1,0 +1,33 @@
+
+
+<div class="movie-details-container" >
+  <h2>{{ movie.title }}</h2>
+  <div class="movie-details-content">
+    <div class="movie-poster-container">
+      <div class="movie-poster-wrapper">
+        <img #moviePoster [src]="imageBaseUrl + movie.poster_path" alt="{{ movie.title }}">
+      </div>
+    </div>
+    <div class="movie-info">
+      <p>{{ movie.overview }}</p>
+      <h3>Cast</h3>
+      <ul>
+
+        <li *ngFor="let actor of actors">
+          <span class="material-symbols-outlined">
+            check_circle
+            </span> {{ actor.name }} as {{ actor.character }}
+        </li>
+      </ul>
+
+      <div>
+        <button class="btn-principal btn-margin" (click)="backPage()" >Back</button>
+      </div>
+    </div>
+
+
+
+
+  </div>
+</div>
+

@@ -1,0 +1,45 @@
+@import "../../../styles.scss";
+h1{
+  color: $colorPrimary;
+}
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.details{
+  padding: 10px 20px;
+  height: 138px;
+  text-align: start;
+}
+
+.button-container{
+  display: flex;
+  justify-content: flex-start;
+  margin:0px 20px 20px 20px;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  padding-bottom: 40px;
+}
+
+.pagination button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.pagination button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.contenedor-search{
+  background-color: $colorGray;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 auto;
+  padding: 20px;
+}

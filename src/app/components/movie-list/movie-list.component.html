@@ -1,0 +1,50 @@
+<div class="container">
+  <h1>Bienvenidos a The Movie DB</h1>
+
+  <div class="contenedor-search">
+    <div class="search-container">
+      <label for="search-input" class="search-label">
+        <span class="material-symbols-outlined">
+          search
+          </span>
+      </label>
+      <input id="search-input" type="text" placeholder="Search" class="search-input">
+    </div>
+
+  </div>
+
+
+
+<div class="movie-list">
+
+  <div  tabindex="0" *ngFor="let movie of movies" class="cards-movie-item" >
+    <div>
+      <img [src]="imageBaseUrl + movie.poster_path" alt="{{ movie.title }}">
+    </div>
+    <div class="details">
+      <a href="#" class="text-succes">Tag</a>
+      <h3>{{ movie.title }}</h3>
+      <p>Rating: {{ movie.vote_average }}</p>
+      <p>Release Date: {{ movie.release_date }}</p>
+    </div>
+    <div class="button-container">
+      <button class="btn-principal" (click)="viewDetails(movie.id)">Details</button>
+    </div>
+
+  </div>
+</div>
+
+<div class="pagination">
+  <button class="btn-principal" (click)="goToFirstPage()"><span class="material-symbols-outlined">
+    first_page
+    </span></button>
+  <button class="btn-principal" (click)="previousPage()" [disabled]="currentPage === 1"><span class="material-symbols-outlined">
+    arrow_back_ios
+    </span></button>
+  <button class="btn-principal" (click)="nextPage()"><span class="material-symbols-outlined">
+    first_page
+    </span></button>
+</div>
+
+</div>
+
