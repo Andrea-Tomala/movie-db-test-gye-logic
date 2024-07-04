@@ -8,9 +8,10 @@ h1{
   justify-content: center;
 }
 .details{
-  padding: 10px 20px;
+  padding: 15px 20px;
   height: 138px;
   text-align: start;
+  display: block;
 }
 
 .button-container{
@@ -42,4 +43,9 @@ h1{
   justify-content: flex-end;
   margin: 0 auto;
   padding: 20px;
+}
+.container-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

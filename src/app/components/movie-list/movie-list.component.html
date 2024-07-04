@@ -18,18 +18,28 @@
 <div class="movie-list">
 
   <div  tabindex="0" *ngFor="let movie of movies" class="cards-movie-item" >
+    <div class="container-text">
+      <div class="details">
+        <a href="#" class="text-succes">Tag</a>
+        <h3>{{ movie.title }}</h3>
+        <p>Rating: {{ movie.vote_average }}</p>
+        <p>Release Date: {{ movie.release_date }}</p>
+      </div>
+
+
+      <div class="button-container">
+        <button class="btn-principal" (click)="viewDetails(movie.id)">Details</button>
+      </div>
+
+    </div>
+
     <div>
+
+
       <img [src]="imageBaseUrl + movie.poster_path" alt="{{ movie.title }}">
     </div>
-    <div class="details">
-      <a href="#" class="text-succes">Tag</a>
-      <h3>{{ movie.title }}</h3>
-      <p>Rating: {{ movie.vote_average }}</p>
-      <p>Release Date: {{ movie.release_date }}</p>
-    </div>
-    <div class="button-container">
-      <button class="btn-principal" (click)="viewDetails(movie.id)">Details</button>
-    </div>
+
+
 
   </div>
 </div>
