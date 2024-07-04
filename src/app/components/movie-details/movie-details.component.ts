@@ -22,9 +22,6 @@ export class MovieDetailsComponent implements OnInit {
     });
     this.movieService.getMovieCredits(movieId).subscribe(response => {
       this.credits = response.cast;
-      //this.actors = this.credits.filter((actor: any) => actor.known_for_department === "Acting");
-
-      // Filtrar solo los actores y tomar los primeros 10
       this.actors = response.cast
       .filter((actor: any) => actor.known_for_department === 'Acting')
       .slice(0, 10);

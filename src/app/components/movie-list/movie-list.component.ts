@@ -24,7 +24,6 @@ export class MovieListComponent implements OnInit {
 
   loadMovies(page: number): void {
     this.movieService.getPopularMovies(page).subscribe(response => {
-      // this.movies = response.results;
       this.movies = response.results.slice(0, 8);
       this.currentPage = page;
       this.movieService.currentPage = page;
@@ -32,17 +31,13 @@ export class MovieListComponent implements OnInit {
   }
 
   nextPage(): void {
-    //this.currentPage++;
     this.movieService.currentPage++;
     this.updateUrl();
     this.loadMovies(this.movieService.currentPage);
   }
 
   previousPage(): void {
-  /*   if (this.currentPage > 1) {
-      this.currentPage--;
-      this.loadMovies(this.movieService.currentPage);
-    } */
+
     if (this.movieService.currentPage > 1) {
       this.movieService.currentPage--;
       this.updateUrl();
